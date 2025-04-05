@@ -14,7 +14,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   // list is iterated using index
   final appScreens = [
     const HomeScreen(),
-    const Center(child: const Text("Search")),
+    const Center(child: Text("Search")),
     const Center(child: const Text("Tickets")),
     const Center(child: const Text("Profile")),
   ];
@@ -38,13 +38,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("My tickets"),
-      ), // AppBar
-      body: appScreens[0],
+      ),
+      body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.blueGrey,
-        unselectedItemColor: const Color(0xFFF526400),
+        unselectedItemColor: const Color(0xFF526400),
         showSelectedLabels: false,
         items: const [
           BottomNavigationBarItem(
